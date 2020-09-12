@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  message = FALSE
+)
+```
+
+# ROpenDataSMM
+
+`ROpenDataSMM`是一個方便R使用[OpenDataSMM](https://github.com/smmtw/OpenDataSMM)的介面，讓開發者能夠直接使用R讀取資料，而不需要手動下載。
+
+## 安裝
+
+透過GitHub:
+
+```r
+# install.packages("devtools")
+devtools::install_github("smmtw/ROpenDataSMM")
+```
+
+## 使用
+
+列出目錄下所有檔案:
+
+```{r list-files-example}
+library('ROpenDataSMM')
+files <- listFiles(path = "data")
+files
+```
+
+使用關鍵字搜尋檔案:
+
+```{r search-files-example}
+files <- searchFiles(keyword = "07", path = "data")
+files
+```
+
+取得檔案內容:
+
+```{r show-file-example}
+file <- showFile(path = "data/108.csv")
+file
+                                  
+```
